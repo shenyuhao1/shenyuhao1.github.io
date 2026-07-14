@@ -1,9 +1,8 @@
 ---
-permalink: /
+permalink: /about/
 title: "关于我 / About"
 author_profile: true
 redirect_from:
-  - /about/
   - /about.html
 ---
 
