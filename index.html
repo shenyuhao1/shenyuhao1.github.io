@@ -52,6 +52,10 @@
     .cat-bubble { left:106px; bottom:32px; min-width:0; min-height:0; padding:0; border:0; border-radius:0; color:#080d12; background:transparent; box-shadow:none; font-size:.92rem; text-shadow:0 1px 0 rgba(255,255,255,.5); }
     @keyframes cat-arrive { 0% { transform:translateY(14px) scale(.8); } 68% { transform:translateY(-6px) scale(1.06); } 100% { transform:translateY(0) scale(1); } }
     @media (max-width:720px) { .portrait-stack .haishen-home { left:calc(100% - 18px); top:calc(100% - 55px); } }
+    /* Restore clear white callouts without putting them over Haishen. */
+    .cat-caption { padding:5px 8px; border:2px solid #263445; border-radius:7px; background:#fffdf3; box-shadow:3px 3px 0 rgba(0,0,0,.2); }
+    .cat-caption span { color:#263445; }
+    .cat-bubble { min-width:34px; min-height:26px; padding:3px 7px; border:2px solid #334155; border-radius:14px 14px 14px 3px; background:#fff; box-shadow:2px 2px 0 rgba(0,0,0,.16); }
   </style>
 </head>
 <body>
