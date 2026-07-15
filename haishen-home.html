@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>海参之家 · 海参展览馆</title>
+  <style>
+    :root{--ink:#263445;--paper:#fff7df;--orange:#e79a50;--line:#513a39}*{box-sizing:border-box}body{margin:0;min-height:100vh;color:var(--ink);font-family:"Microsoft YaHei",system-ui,sans-serif;background:radial-gradient(circle at 15% 10%,#fff4cf 0 3%,transparent 24%),linear-gradient(145deg,#1c3044,#345a66)}.wrap{width:min(100% - 32px,1000px);margin:auto;padding:32px 0 64px}.back{display:inline-block;color:#fff7df;text-decoration:none;font-weight:800;font-size:.9rem}.hero{display:grid;grid-template-columns:1fr 150px;gap:22px;align-items:center;padding:34px 0 28px;color:#fff7df}.eyebrow{margin:0 0 8px;color:#ffd77a;font-size:.78rem;font-weight:800;letter-spacing:.13em}.hero h1{margin:0;font-size:clamp(2rem,7vw,4.5rem);letter-spacing:-.08em}.hero p{max-width:530px;margin:13px 0 0;line-height:1.8;color:#d7edf0}.cat-card{width:132px;height:132px;place-self:end;display:grid;place-items:center;border:4px solid var(--line);border-radius:18px;background:var(--paper);box-shadow:7px 8px 0 rgba(0,0,0,.25)}.cat-card img{width:116px;height:116px;object-fit:cover;object-position:5% 14%;image-rendering:pixelated}.notice{margin:0 0 26px;padding:12px 15px;border:2px dashed #c88355;border-radius:12px;color:#694b43;background:#fff2ce;font-size:.88rem}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.frame{min-height:230px;display:grid;place-items:center;padding:11px;border:4px solid var(--line);border-radius:13px;background:var(--paper);box-shadow:5px 6px 0 rgba(0,0,0,.22);transform:rotate(var(--tilt,0deg))}.frame:nth-child(2){--tilt:2deg}.frame:nth-child(3){--tilt:-1deg}.placeholder{display:grid;place-items:center;width:100%;height:100%;min-height:194px;border:2px dashed #d69b68;border-radius:7px;color:#a46d4e;background:repeating-linear-gradient(45deg,#fff9e9,#fff9e9 12px,#fff2d5 12px,#fff2d5 24px);font-size:.88rem;text-align:center;line-height:1.7}.footer{margin-top:30px;color:#bcd5db;font-size:.82rem;text-align:center}@media(max-width:650px){.hero{grid-template-columns:1fr}.cat-card{place-self:start}.gallery{grid-template-columns:1fr}.frame{min-height:200px}}
+    .cat-card img{display:none}.cat-card::after{content:'';width:118px;height:118px;background:url('/assets/haishen/haishen-sprite-sheet-alpha.png') no-repeat -17px -32px/767px 409px;image-rendering:pixelated}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <a class="back" href="/">← 回到沈俞豪的主页</a>
+    <section class="hero">
+      <div><p class="eyebrow">HAISHEN'S HOME</p><h1>海参之家</h1><p>一只灰白色小猫的私人展览馆。照片会慢慢填满这里。</p></div>
+      <div class="cat-card"><img src="/assets/haishen/haishen-sprite-sheet-alpha.png" alt="像素海参"></div>
+    </section>
+    <p class="notice">展览馆已开门。这里是静态相册：以后把海参照片放进仓库，就能永久展示，不需要数据库或服务器。</p>
+    <section class="gallery" aria-label="海参照片展览"><article class="frame"><div class="placeholder">第一张海参照片<br>等待入馆</div></article><article class="frame"><div class="placeholder">第二张海参照片<br>等待入馆</div></article><article class="frame"><div class="placeholder">第三张海参照片<br>等待入馆</div></article></section>
+    <p class="footer">海参展览馆 · 正在缓慢营业</p>
+  </main>
+</body>
+</html>
