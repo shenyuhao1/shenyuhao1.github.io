@@ -91,5 +91,8 @@
   <script>
     (()=>{const home=document.querySelector('.haishen-home'),portrait=document.querySelector('.portrait-wrap'),bubble=document.getElementById('cat-bubble');let bubbleTimer;function revealHaishen(){home.classList.remove('is-visible');void home.offsetWidth;home.classList.add('is-visible');bubble.textContent='喵！';bubble.classList.add('show');clearTimeout(bubbleTimer);bubbleTimer=setTimeout(()=>bubble.classList.remove('show'),1700)}portrait.setAttribute('tabindex','0');portrait.setAttribute('role','button');portrait.setAttribute('aria-label','点击呼唤海参');portrait.addEventListener('click',revealHaishen);portrait.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();revealHaishen()}})})();
   </script>
+  <script>
+    (()=>{const portrait=document.querySelector('.portrait-wrap'),home=document.querySelector('.haishen-home');let taps=[];portrait.addEventListener('click',()=>{const now=Date.now();taps=taps.filter(time=>now-time<5000);taps.push(now);if(taps.length===3){home.classList.remove('is-visible');taps=[]}})})();
+  </script>
 </body>
 </html>
