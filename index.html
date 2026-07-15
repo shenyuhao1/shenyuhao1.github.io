@@ -123,5 +123,8 @@
   <script>
     (()=>{const portrait=document.querySelector('.portrait-wrap'),homeDoor=document.querySelector('.haishen-door'),portal=document.querySelector('.portal-door');document.addEventListener('click',event=>{if(!portrait.classList.contains('is-opening')&&!portrait.classList.contains('is-opening-right'))return;if(event.target.closest('.portrait-wrap,.haishen-door,.portal-door,.haishen-home,a,button,input,textarea,select,video,dialog'))return;portrait.classList.remove('is-opening','is-opening-right');homeDoor.classList.remove('is-visible');portal.classList.remove('is-visible')},true)})();
   </script>
+  <script>
+    (()=>{const portrait=document.querySelector('.portrait-wrap');let taps=[],entering=false;portrait.addEventListener('click',()=>{if(entering)return;const now=Date.now();taps=taps.filter(time=>now-time<7000);taps.push(now);if(taps.length!==7)return;entering=true;document.body.style.transition='filter .42s ease,opacity .42s ease';document.body.style.filter='grayscale(.62) brightness(.46)';document.body.style.opacity='.18';setTimeout(()=>location.assign('/behind-the-scenes.html'),420)})})();
+  </script>
 </body>
 </html>
