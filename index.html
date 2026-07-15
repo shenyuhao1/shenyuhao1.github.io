@@ -36,6 +36,11 @@
     /* Transparent cutout source: the white fur remains intact; only the outer sheet background is alpha. */
     .cat-stage { border:0; border-radius:0; background:transparent; box-shadow:none; }
     .cat-sprite { background-image:url('/assets/haishen/haishen-sprite-sheet-alpha.png'); }
+    /* The food bowl is deliberately separate from the cat's sprite area. */
+    .haishen-home > .star-box { left:143px; right:auto; bottom:8px; width:42px; height:30px; border:3px solid #754326; border-radius:5px 5px 11px 11px; color:#fff0a0; background:linear-gradient(#8e5230 0 18%,#f2b958 18% 33%,#c96f42 33%); box-shadow:3px 3px 0 rgba(0,0,0,.24); font-size:1rem; line-height:1; text-shadow:1px 1px 0 #7a3d22; }
+    .haishen-home > .star-box::before { content:''; position:absolute; left:-4px; right:-4px; top:-8px; height:9px; border:3px solid #754326; border-radius:5px 5px 2px 2px; background:#f5c567; box-shadow:inset 0 -3px 0 #c97943; }
+    .haishen-home > .star-box:hover { transform:translateY(-2px) rotate(-3deg); }
+    .haishen-home > .star-spark { left:157px; right:auto; bottom:41px; }
   </style>
 </head>
 <body>
@@ -62,5 +67,6 @@
     const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
     const c=document.getElementById('space'),x=c.getContext('2d');let dots=[];function resize(){c.width=innerWidth;c.height=innerHeight;dots=Array.from({length:Math.min(82,Math.floor(innerWidth*innerHeight/18000))},()=>({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-.5)*.34,vy:(Math.random()-.5)*.34,r:Math.random()*1.45+.35}))}function draw(){x.clearRect(0,0,c.width,c.height);for(const d of dots){d.x+=d.vx;d.y+=d.vy;if(d.x<0||d.x>c.width)d.vx*=-1;if(d.y<0||d.y>c.height)d.vy*=-1;x.beginPath();x.arc(d.x,d.y,d.r,0,7);x.fillStyle='rgba(116,222,255,.75)';x.fill()}for(let i=0;i<dots.length;i++)for(let j=i+1;j<dots.length;j++){let a=dots[i],b=dots[j],dx=a.x-b.x,dy=a.y-b.y,dist=Math.hypot(dx,dy);if(dist<130){x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.strokeStyle=`rgba(84,194,255,${.17*(1-dist/130)})`;x.stroke()}}requestAnimationFrame(draw)}resize();addEventListener('resize',resize);if(!matchMedia('(prefers-reduced-motion: reduce)').matches)draw();
   </script>
+  <script>document.querySelector('.haishen-home').append(document.getElementById('star-box'),document.getElementById('star-spark'));</script>
 </body>
 </html>
