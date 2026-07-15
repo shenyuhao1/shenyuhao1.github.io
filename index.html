@@ -61,6 +61,18 @@
     .portrait-stack .haishen-home.is-visible { transform:translate(0,0) scale(.82); }
     .cat-bubble { left:22px; bottom:112px; }
     .cat-caption { top:-8px; left:98px; font-size:.65rem; }
+    /* Secret entrance: hold the portrait, then drag it left to reveal the cat house. */
+    .portrait-stack { perspective:900px; }
+    .portrait-stack .portrait-wrap { transition:transform .38s cubic-bezier(.2,.8,.2,1); }
+    .portrait-stack .portrait-wrap.is-opening { transform:rotate(3deg) rotateY(-66deg); transform-origin:left center; }
+    .haishen-door { position:absolute; right:-118px; top:67px; z-index:4; width:84px; height:73px; display:grid; place-items:end center; color:#fff5c9; text-decoration:none; opacity:0; pointer-events:none; transform:translateX(-14px) scale(.82); transition:.28s ease; }
+    .haishen-door.is-visible { opacity:1; pointer-events:auto; transform:translateX(0) scale(1); }
+    .haishen-door .roof { position:absolute; top:0; width:0; height:0; border-left:45px solid transparent; border-right:45px solid transparent; border-bottom:34px solid #bb6a48; filter:drop-shadow(2px 2px 0 #37283a); }
+    .haishen-door .house { position:relative; width:69px; height:48px; border:3px solid #37283a; border-radius:5px 5px 8px 8px; background:#f0b85b; box-shadow:3px 3px 0 rgba(0,0,0,.25); }
+    .haishen-door .house::before { content:''; position:absolute; left:20px; bottom:0; width:23px; height:30px; border:3px solid #37283a; border-bottom:0; border-radius:13px 13px 0 0; background:#263b4d; }
+    .haishen-door .house::after { content:'海参之家'; position:absolute; top:53px; left:50%; transform:translateX(-50%); width:92px; color:#fff7dc; font-size:.63rem; font-weight:800; text-align:center; text-shadow:1px 1px 0 #182433; white-space:nowrap; }
+    .haishen-door:hover { filter:brightness(1.12); transform:translateY(-3px) scale(1.03); }
+    @media (max-width:720px) { .haishen-door { right:-96px; top:52px; transform:translateX(-14px) scale(.78); } .haishen-door.is-visible { transform:translateX(0) scale(.86); } }
   </style>
 </head>
 <body>
@@ -93,6 +105,9 @@
   </script>
   <script>
     (()=>{const portrait=document.querySelector('.portrait-wrap'),home=document.querySelector('.haishen-home');let taps=[];portrait.addEventListener('click',()=>{const now=Date.now();taps=taps.filter(time=>now-time<5000);taps.push(now);if(taps.length===3){home.classList.remove('is-visible');taps=[]}})})();
+  </script>
+  <script>
+    (()=>{const portrait=document.querySelector('.portrait-wrap'),stack=document.querySelector('.portrait-stack'),cat=document.querySelector('.haishen-home');const door=document.createElement('a');door.className='haishen-door';door.href='/haishen-home.html';door.setAttribute('aria-label','进入海参之家');door.innerHTML='<span class="roof"></span><span class="house"></span>';stack.append(door);let startX=0,startY=0,armed=false,revealed=false,holdTimer,suppressClick=false;function revealDoor(){if(revealed)return;revealed=true;suppressClick=true;cat.classList.remove('is-visible');portrait.classList.add('is-opening');door.classList.add('is-visible');setTimeout(()=>suppressClick=false,450)}portrait.addEventListener('pointerdown',event=>{startX=event.clientX;startY=event.clientY;armed=false;holdTimer=setTimeout(()=>armed=true,450);portrait.setPointerCapture?.(event.pointerId)});portrait.addEventListener('pointermove',event=>{if(armed&&startX-event.clientX>52&&Math.abs(startY-event.clientY)<52)revealDoor()});portrait.addEventListener('pointerup',()=>clearTimeout(holdTimer));portrait.addEventListener('pointercancel',()=>clearTimeout(holdTimer));portrait.addEventListener('click',event=>{if(suppressClick){event.preventDefault();event.stopImmediatePropagation()}},true)})();
   </script>
 </body>
 </html>
