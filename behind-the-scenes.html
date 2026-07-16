@@ -13,17 +13,19 @@
   </style>
   <style>
     body{position:relative;isolation:isolate;background:#030304}
-    body:before{z-index:-1}
-    .temple-bg{position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:0;transform:scale(1.04);filter:brightness(.22) saturate(.55);background:linear-gradient(90deg,rgba(2,3,4,.58),rgba(2,3,4,.14) 53%,rgba(2,3,4,.38)),linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.28)),url('/images/glass-sphere-sanctuary.png') center/cover no-repeat;animation:temple-reveal 5s cubic-bezier(.2,.72,.2,1) .15s forwards}
-    .wrap{position:relative;z-index:1}
+    body:before{z-index:2;opacity:.18}
+    body:after{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;background:#030304;animation:temple-veil 5s cubic-bezier(.2,.72,.2,1) .15s forwards}
+    .temple-bg{position:fixed;inset:0;z-index:0;pointer-events:none;transform:scale(1.04);filter:brightness(1.02) saturate(.95) contrast(1.06);background:linear-gradient(90deg,rgba(2,3,4,.46),rgba(2,3,4,.06) 53%,rgba(2,3,4,.26)),linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.18)),url('/images/glass-sphere-sanctuary.png') center/cover no-repeat;animation:temple-reveal 5s cubic-bezier(.2,.72,.2,1) .15s forwards}
+    .wrap{position:relative;z-index:3}
     .nav{position:relative;z-index:4}
     .back{padding:8px 11px;border:1px solid rgba(209,218,201,.16);border-radius:999px;background:rgba(5,6,7,.38);backdrop-filter:blur(8px)}
     .copy-set{transition:opacity .35s ease,transform .35s ease}
     .invocation{max-width:570px;margin:0;color:#b8beb7;font-family:Georgia,"Times New Roman","Songti SC",serif;font-size:.96rem;line-height:1.95;letter-spacing:.05em;text-shadow:0 2px 20px #000}
     .litany{display:grid;gap:4px;max-width:620px;margin-top:17px;color:#8f988f;font-family:Georgia,"Times New Roman",serif;font-size:.72rem;line-height:1.6;letter-spacing:.055em}
     .litany [lang="grc"]{font-style:italic;color:#aab2aa}
-    @keyframes temple-reveal{0%{opacity:0;transform:scale(1.04);filter:brightness(.22) saturate(.55)}38%{opacity:.58}100%{opacity:.96;transform:scale(1);filter:brightness(1.08) saturate(.92) contrast(1.04)}}
-    @media(prefers-reduced-motion:reduce){.temple-bg{animation:none;opacity:.96;transform:none;filter:brightness(1.08) saturate(.92) contrast(1.04)}}
+    @keyframes temple-reveal{from{transform:scale(1.04)}to{transform:scale(1)}}
+    @keyframes temple-veil{0%{opacity:1}38%{opacity:.58}100%{opacity:.18}}
+    @media(prefers-reduced-motion:reduce){body:after{animation:none;opacity:.18}.temple-bg{animation:none;transform:none}}
   </style>
 </head>
 <body>
