@@ -1,56 +1,26 @@
-# Ignore the contents of the _site directory and other cache directories
+﻿# Jekyll build output and caches
 _site/
 .sass-cache/
 
-# Ignore the directory for local files during development
+# Local development and dependency artifacts
 local/
-
-# Ignore the Gemfile that is generated
 Gemfile.lock
-
-# Ignore files created by npm
-node_modules
+node_modules/
 package-lock.json
-
-# Ignore the vendor file at root level and bundle for alternative installation
 /vendor/
 .bundle/
 
-# Ignore folders related to IDEs
+# Editor and operating-system files
 .vscode/
-
-# Ignore files created by MacOS
 .DS_Store
-# 仅部署主页时不需要追踪的旧模板与工程文件
-/.devcontainer/
-/.github/
-/_data/
-/_drafts/
-/_includes/
-/_layouts/
-/_pages/
-/_portfolio/
-/_posts/
-/_publications/
-/_sass/
-/_talks/
-/_teaching/
-/files/
-/markdown_generator/
-/talkmap/
-/scripts/
-/assets/css/
-/assets/fonts/
-/allprograms.html
-/CONTRIBUTING.md
-/Dockerfile
-/Gemfile
-/LICENSE
-/README.md
-/docker-compose.yaml
-/_config.yml
-/_config_docker.yml
-/package.json
-/talkmap.ipynb
-/talkmap.py
-/talkmap_out.ipynb
+
+# Local-only legacy development utilities
+.devcontainer/
+scripts/
+Dockerfile
+docker-compose.yaml
+_config_docker.yml
+package.json
+CONTRIBUTING.md
+LICENSE
+README.md
