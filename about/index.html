@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>关于我 / About · 沈俞豪</title>
+  <style>
+    :root{color-scheme:dark;--bg:#090d12;--panel:#111923;--line:#263544;--text:#e9f0f5;--muted:#9eacb8;--accent:#5ee7ff}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0,#132332 0,transparent 36%),var(--bg);color:var(--text);font:16px/1.8 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+    main{width:min(900px,calc(100% - 36px));margin:0 auto;padding:38px 0 72px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:52px}.mark{letter-spacing:.18em;font-weight:800}.back{color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px}.back:hover{color:var(--accent);border-color:var(--accent)}
+    .eyebrow{color:var(--accent);font-size:12px;letter-spacing:.2em;text-transform:uppercase}h1{font-size:clamp(36px,7vw,68px);line-height:1.1;margin:10px 0 34px}h2{margin:46px 0 12px;font-size:24px;border-left:3px solid var(--accent);padding-left:12px}h3{font-size:19px;margin:28px 0 6px}p{color:var(--muted);margin:8px 0}strong{color:var(--text)}a{color:var(--accent)}.stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.tag{border:1px solid var(--line);border-radius:999px;padding:3px 11px;color:var(--muted);font-size:14px}.project{border-top:1px solid var(--line);padding:18px 0}.project h3{margin-top:0}.en{font-size:14px;color:#83929e}.contact{margin-top:48px;padding:22px;border:1px solid var(--line);background:#0d151e;border-radius:14px}
+  </style>
+</head>
+<body><main>
+  <nav class="top"><div class="mark">SY // 07</div><a class="back" href="/">← 回到主页</a></nav>
+  <div class="eyebrow">ARCHIVE / ABOUT</div><h1>关于我</h1>
+  <section><h2>中文</h2><p>你好，我是<strong>沈俞豪</strong>，信息与计算科学专业在校学生。</p><p>我对系统编程、AI 应用开发和工程实践有浓厚兴趣，喜欢动手把想法变成可以跑起来的东西。目前主要使用 Python、Rust 和 C 进行开发，涉及方向包括 AI 视频生成流水线、实时物理模拟、桌面工具开发等。</p><p><strong>技术栈：</strong></p><div class="stack"><span class="tag">Python</span><span class="tag">Rust</span><span class="tag">C</span><span class="tag">Manim</span><span class="tag">FFmpeg</span><span class="tag">TTS</span><span class="tag">Dify</span><span class="tag">NumPy</span><span class="tag">Tkinter</span><span class="tag">pytest</span><span class="tag">Git</span><span class="tag">SDL2</span><span class="tag">TCP Socket</span><span class="tag">Win32 API</span></div></section>
+  <section><h2>English</h2><p>Hi, I'm <strong>Shen Yuhao</strong>, an undergraduate student majoring in Information and Computing Science.</p><p>I'm passionate about systems programming, AI application development, and hands-on engineering. I enjoy turning ideas into working software. My main languages are Python, Rust, and C.</p></section>
+  <section><h2>项目 / Projects</h2>
+    <article class="project"><h3><a href="https://github.com/shenyuhao1/ai-video-pipeline" target="_blank" rel="noreferrer">AI 视频自动化生成流水线</a></h3><p>基于 Python 的端到端视频生成系统，集成 Dify、Manim、TTS 与 FFmpeg，提供 GUI 与命令行双入口，并配备自动化测试。</p><p class="en">End-to-end AI video generation pipeline integrating Dify, Manim, TTS, and FFmpeg.</p></article>
+    <article class="project"><h3><a href="https://github.com/shenyuhao1/physics_sandbox.rs" target="_blank" rel="noreferrer">Rust 2D 刚体物理沙盒</a></h3><p>用 Rust 实现的实时 2D 刚体物理模拟，支持 LAN 多人联机、碰撞检测、弹性碰撞和轨迹可视化。</p><p class="en">Real-time 2D rigid-body physics sandbox with LAN multiplayer written in Rust.</p></article>
+    <article class="project"><h3><a href="https://github.com/shenyuhao1/cc-project" target="_blank" rel="noreferrer">C/Win32 模拟键盘输入工具</a></h3><p>纯 C + Win32 API 桌面工具，通过 SendInput 模拟输入，支持中文与完整 Unicode。</p><p class="en">A pure C + Win32 API desktop tool that simulates keyboard input with full Unicode support.</p></article>
+  </section>
+  <div class="contact"><strong>联系方式</strong><br><a href="mailto:15658328056@163.com">15658328056@163.com</a></div>
+</main></body></html>
